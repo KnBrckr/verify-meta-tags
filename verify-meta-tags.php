@@ -44,9 +44,8 @@ if ( ! class_exists('verify_meta_tags')) {
 		{
 			$this->options = $this->sanitize_settings(get_option('verify-meta-tags'));
 			
-			// Register activation and uninstall hooks
-			register_activation_hook(__FILE__, array($this, 'activation_hook'));
-			register_uninstall_hook(__FILE__, array($this, 'uninstall_hook'));
+			// Register uninstall hook
+			register_uninstall_hook(__FILE__, array('verify_meta_tags', 'uninstall_hook'));
 			
 			// Run the init during WP init processing
 			add_action('init', array($this, 'wp_init'));
@@ -68,19 +67,7 @@ if ( ! class_exists('verify_meta_tags')) {
 		}
 		
 		/**
-		 * Perform Plugin activation:
-		 *   - Create plugin option defaults
-		 *
-		 * @return void
-		 */
-		function activation_hook()
-		{
-			// Setup defaults
-			update_option('verify-meta-tags', $this->options);
-		}
-		
-		/**
-		 * Do plugin uninstall actions
+		 * Do plugin uninstall actions - Called as a static function, $this references not allowed
 		 *   - Delete plugin options
 		 *
 		 * @return void
@@ -345,6 +332,5 @@ if ( ! class_exists('verify_meta_tags')) {
 // =========================
 
 $verify_meta_tags = new verify_meta_tags();
-
 
 ?>
