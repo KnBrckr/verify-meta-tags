@@ -63,7 +63,6 @@ if ( ! class_exists('verify_meta_tags')) {
 				add_action('admin_menu', array($this, 'vmt_options_page'));
 			}
 			add_action('wp_head', array($this, 'vmt_head'));
-			add_action('wp_footer', array($this, 'vmt_footer'));
 		}
 		
 		/**
@@ -311,19 +310,10 @@ if ( ! class_exists('verify_meta_tags')) {
 			if (! empty($this->options['pinterest'])) {
 				echo '<meta name="p:domain_verify" content="' . esc_attr($this->options['pinterest']) . '" />';
 			}
-		}
-		
-		/**
-		 * Emit analytics code block in footer
-		 *
-		 * @return void
-		 */
-		function vmt_footer()
-		{
 			if (! empty($this->options['analytics'])) {
 				echo $this->options['analytics'];
 			}
-		}
+		}		
 	}
 }
 
