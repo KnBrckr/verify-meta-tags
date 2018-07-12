@@ -3,7 +3,7 @@
 Plugin Name: Verify Meta Tags
 Plugin URI: http://pumastudios.com/software/
 Description: Add verification meta tags to a site
-Version: 0.1
+Version: 0.1.1
 Author: Kenneth J. Brucker
 Author URI: http://pumastudios.com/
 Text Domain: verify-meta-tags

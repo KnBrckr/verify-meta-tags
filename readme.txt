@@ -4,7 +4,7 @@ Donate link: http://pumastudios.com/software/
 Tags: meta, verify
 Requires at least: 4.0
 Tested up to: 4.0
-Stable tag: 0.1
+Stable tag: 0.1.1
 
 == Description ==
 
@@ -26,6 +26,10 @@ Just like any other plugin
 
 
 == Changelog ==
+
+= 0.1.1 =
+
+* Add composer.json
 
 = 0.1 =
 
